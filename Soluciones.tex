@@ -1,0 +1,281 @@
+\documentclass[10pt,a4paper,openright]{book}
+
+%% Formateo del título del documento
+\title{Soluciones de los Ejercicios. Geometría lineal}
+\author{Mario Calvarro Marines}
+\date{}
+
+%% Formateo del estilo de escritura y de la pagina
+\pagestyle{plain}
+\setlength{\parskip}{0.35cm} %edicion de espaciado
+\setlength{\parindent}{0cm} %edicion de sangría
+\clubpenalty=10000 %líneas viudas NO
+\widowpenalty=10000 %líneas viudas NO
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry} % para establecer las medidas de los margenes
+\usepackage[spanish]{babel} %Para que el idioma por defecto sea español
+\usepackage{ulem} % para poder subrayar entornos especiales como las secciones
+
+%% Texto matematico y simbolos especiales
+\usepackage{amsmath} %Paquetes para mates
+\usepackage{amsfonts} %Paquetes para mates
+\usepackage{amssymb} %Paquetes para mates
+\usepackage{stmaryrd} % paquete para mates
+\usepackage{latexsym} %Paquetes para mates
+\usepackage{cancel} %Paquete tachar cosas
+
+%% Ruta de las fotos e inclusion de las mismas
+\usepackage{graphicx}
+\graphicspath{{./fotos/}}
+
+%% Inclusion de referencias cruzadas por defecto y específicas
+\usepackage{hyperref}
+
+%% Paquete para definir y utilizar colores por el documento
+\usepackage[dvipsnames,usenames]{xcolor} %activar e incluir colores
+    %% definicion de los colores que se van a utilizar en cada cabecera
+    \definecolor{capitulos}{RGB}{60,0,0}% gama de colores de los capitulos
+    \definecolor{secciones}{RGB}{95,8,5}% gama de colores de las secciones
+    \definecolor{subsecciones}{RGB}{140,36,31}% gama de colores de las subsections
+    \definecolor{subsubsecciones}{RGB}{188,109,79}% gama de colores de las subsubsections
+    \definecolor{teoremas}{RGB}{164,56,32}% gama de colores para los teoremas
+    \definecolor{demos}{RGB}{105,105,105} % gama de colores para el cuerpo de las demostraciones
+
+%% Paquete para la edición y el formateo de capítulos, secciones...
+\usepackage[explicit]{titlesec}
+    %% Definición del estilo de los capítulos, secciones, etc...
+    \titleformat{\chapter}[display]{\normalfont\huge\bfseries\color{capitulos}}{}{0pt}{\Huge #1}[\titlerule]
+    \titleformat{\section}{\normalfont\Large\bfseries\color{secciones}}{}{0pt}{#1}
+    \titleformat{\subsection}{\normalfont\large\bfseries\color{subsecciones}}{}{0pt}{\uline{#1}}
+    \titleformat{\subsubsection}{\normalfont\normalsize\bfseries\color{subsubsecciones}}{}{0pt}{#1}
+
+%% Paquete para el formateo de entornos del proyecto
+\usepackage{ntheorem}[thmmarks]
+    %% Definicion del aspecto de los entornos matematicos del proyecto
+    \theoremstyle{break}
+    \theoremheaderfont{\normalfont\bfseries\color{teoremas}}
+    \theorembodyfont{\itshape}
+    \theoremseparator{\vspace{0.2cm}}
+    \theorempreskip{\topsep}
+    \theorempostskip{\topsep}
+    \theoremindent0cm
+    \theoremnumbering{arabic}
+    \theoremsymbol{}
+    \theoremprework{\vspace{0.2cm} \hrule}
+    \theorempostwork{\vspace{0.2cm}\hrule}
+        \newtheorem*{defi}{Definición}
+
+    \theoremprework{\vspace{0.25cm}}
+        \newtheorem*{theo}{Teorema}
+
+    \theoremprework{\vspace{0.25cm}}
+    	\newtheorem*{coro}{Corolario}
+
+    \theoremprework{\vspace{0.25cm}}
+    	\newtheorem*{lema}{Lema}
+
+    \theoremprework{\vspace{0.25cm}}
+    	\newtheorem*{prop}{Proposición}
+
+    \theoremheaderfont{\normalfont}
+    \theorembodyfont{\normalfont\color{demos}}
+    \theoremsymbol{\hfill\square}
+    	\newtheorem*{demo}{\underline{Demostración}:}
+
+    \theoremheaderfont{\normalfont}
+    \theorembodyfont{\normalfont}
+    	\newtheorem*{obs}{\underline{Observación}:}
+    	\newtheorem*{ej}{\underline{Ejemplo}:}
+
+%% Definicion de operadores especiales para simplificar la escritura matematica
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\img}{img}
+\DeclareMathOperator{\rot}{rot}
+\DeclareMathOperator{\divg}{div}
+\newcommand{\dif}[1]{\ d#1}
+
+%% Paquete e instrucciones para la generacion de los dibujos
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{tkz-fct}
+\usepgfplotslibrary{fillbetween}
+\usepackage{tikz,tikz-3dplot}
+\tdplotsetmaincoords{80}{45}
+\tdplotsetrotatedcoords{-90}{180}{-90}
+\usetikzlibrary{arrows}
+    %% style for surfaces
+    \tikzset{surface/.style={draw=blue!70!black, fill=blue!40!white, fill opacity=.6}}
+
+    %% macros to draw back and front of cones
+    %% optional first argument is styling; others are z, radius, side offset (in degrees)
+    \newcommand{\coneback}[4][]{
+        %% start at the correct point on the circle, draw the arc, then draw to the origin of the diagram, then close the path
+        \draw[canvas is xy plane at z=#2, #1] (45-#4:#3) arc (45-#4:225+#4:#3) -- (O) --cycle;
+    }
+    \newcommand{\conefront}[4][]{
+        \draw[canvas is xy plane at z=#2, #1] (45-#4:#3) arc (45-#4:-135+#4:#3) -- (O) --cycle;
+    }
+    
+    \tikzset{middlearrow/.style={decoration={markings, mark= at position 0.5 with {\arrow{#1}},},postaction={decorate}}}
+    
+    \usetikzlibrary{decorations.markings}
+    
+    \newcommand{\AxisRotator}[1][rotate=0]{
+    \tikz [x=0.25cm,y=0.60cm,line width=.2ex,-stealth,#1] \draw (0,0) arc (-150:150:1 and 1);
+    }
+    
+    \usetikzlibrary{shapes}
+
+
+\begin{document}
+\maketitle
+\setcounter{tocdepth}{3}% para que salgan las subsubsecciones en el indice
+\tableofcontents
+\chapter{Hoja 1}%
+\label{cha:hoja_1}
+\section{Ejercicio 5}%
+\label{sec:5}
+Sea $c_i = \left( 0, \ldots, 0, 1, 0, \ldots, 0 \right): i \in \{1, \ldots, n\}$. Como referencia $\mathcal{R}_c = \{\left( 0, \ldots, 0 \right), c_1, \ldots, c_n\}$ y $c_0 := \left( 0, \ldots, 0 \right)$. 
+
+Definimos $f: \mathbb{A}^{n}_k \rightarrow \mathbb{A}^{n}_k$, como $f\left( c_i \right) = c_i,\ \forall i$ y $f\left( 0, \ldots, 0 \right) = \left( a_1, \ldots, a_n \right) \in \mathbb{A}^{n}_k,\ a_1, \ldots, a_n \in K$.
+
+Dado $x \in \mathbb{A}^{n}_k,\ \exists x_1, \ldots, x_n \in K: x = c_0 + x_1\overrightarrow{c_0c_1} + \ldots + x_n \overrightarrow{c_0c_n} \Rightarrow$
+\[
+f\left( x \right) = f\left( c_0 \right)  + \overrightarrow{f} \left( \sum_{i=1}^{n} x_i \overrightarrow{c_0c_i} \right) = \left( a_1, \ldots, a_n \right) + \sum_{i=1}^{n} x_i \overrightarrow{f} \left( \overrightarrow{c_0 c_i} \right) = (*) 
+\]
+Como:
+\[
+c_i = \left( 0, \ldots, 0 \right) + \overrightarrow{c_0c_i},\ c_i = f\left( c_i \right) = f\left( 0, \ldots, 0 \right) + \overrightarrow{f} \left( \overrightarrow{c_0c_i} \right) = \left( a_1, \ldots, a_n \right) + \overrightarrow{f} \left( \overrightarrow{c_0c_i} \right) \Rightarrow
+\]\[
+\overrightarrow{f} \left( \overrightarrow{c_0c_i} \right) = c_i - \left( a_1, \ldots, a_n \right) = \left( -a_1, \ldots, 1 - a_i, \ldots, -a_n \right) \in k^n
+\]
+Entonces,
+\[
+(*) = \left( a_1, \ldots, a_n \right) + \sum_{i=1}^{n} x_i\left( -a_1, \ldots, 1 - a_i, \ldots, -a_n \right) = \left( a_1, \ldots, a_n \right) + x_1 \left( 1 - a_1, \ldots, -a_n \right) + \ldots +  
+\]\[
++ x_n \left( -a_1, \ldots, 1 - a_n \right) = \left( a_1 + x_1 - a_1x_1 - \ldots -a_1x_n, \ldots, a_n - a_nx_1 - \ldots - a_n x_n + x_n \right) = 
+\]\[
+= \left( a_1\left( 1 - x_1 - \ldots - x_n \right) + x_1, \ldots, a_n \left( 1 - x_1 - \ldots - x_n \right) + x_n \right)
+\]
+
+\section{Ejercicio 7}%
+\label{sec:7}
+Sean las rectas cuya intersección buscamos:
+\begin{gather*}
+\begin{cases}
+    L_1 = \{X_0 - X_1 - X_2 = 0\} \\
+    L_2 = \{2X_0 + X_1 - 2X_2 = 0\}     
+\end{cases} \subset \mathbb{P}^{n}_{k} 
+.\end{gather*}
+Pasamos al dual: 
+\begin{gather*}
+    L_1 \leftrightarrow \left( 1 : -1 : -1 \right) \in \mathbb{P}^{2}_{k} \\
+    L_2 \leftrightarrow \left( 2 : 1 : -2 \right) \in \mathbb{P}^{2}_{k} 
+.\end{gather*}
+Por tanto, la intersección es: 
+\[
+    0 = \begin{vmatrix} U_0 & U_1 & U_2\\ 1 & -1 & -1\\ 2 & 1 & -2 \end{vmatrix} = 3U_0 + 3U_2
+\]
+Esta ecuación se corresponde con una recta en el dual, es decir, un punto en el proyectivo:
+\[
+L_3^* = \{3U_0 + 3U_2 = 0\} \leftrightarrow \left( 1 : 0 : 1 \right) \in \mathbb{P}^{2}_{k} = L_1 \cap L_2
+\]
+Haciendo la intersección con el punto original nos queda:
+\[
+    0 = \begin{vmatrix} X_0 & X_1 & X_2\\ 2 & 1 & -1\\ 1 & 0 & 1 \end{vmatrix} = X_0 - 3X_1 - X_2 \Rightarrow \{X_0 - 3X_1 - X_2 = 0\} \subset \mathbb{P}^{2}_{k} 
+\]
+
+\section{Ejercicio 8}%
+\label{sec:8}
+Recta que pasa por $\left( 1 : -1 : -1 \right), \left( 2 : 1 : -2 \right)$ en el proyectivo:
+\[
+    0 = \begin{vmatrix} X_0 & X_1 & X_2\\ 1 & -1 & -1\\ 2 & 1 & -2 \end{vmatrix} = 3X_0 + 3X_2
+\]
+Intersección con $2X_0 + X_1 - X_2 = 0$. Pasamos al dual: ecuación generada por los puntos $\left( 3 : 0 : 3 \right)$ y $\left( 2 : 1 : -1 \right)$
+\[
+    0 = \begin{vmatrix} U_0 & U_1 & U_2\\ 3 & 0 & 3\\ 2 & 1 & -1 \end{vmatrix} = -3U_0 + 9U_1 + 3U_2
+\]
+los coeficientes coinciden con las coordenadas del punto intersección en el proyectivo:
+\[
+\left( -3 : 9 : 3 \right) = \left( -1 : 3 : 1 \right) \in \mathbb{P}^{2}_{k} 
+\]
+
+\section{Ejercicio 9}%
+\label{sec:ejercicio_9}
+Construimos la recta $L$ que pasa por $A$ y $C$:
+\[
+    \begin{vmatrix} X_0 & X_1 & X_2\\2 & 0 & 3\\ 3 & 1 & 0 \end{vmatrix} = 0 \Leftrightarrow L := \{-3X_0 + 9X_1 + 2X_2 = 0\} 
+\]
+Vemos que $B \not\in L$ ya que $-3\left( -1 \right) + 9\left( 1 \right) + 2\left( 2 \right) \neq 0 \Rightarrow$ \underline{NO} están alineados.
+
+\section{Ejercicio 10}%
+\label{sec:ejercicio_10}
+Pasamos al dual:
+\[
+\begin{cases}
+    X_0 - X_1 + 2X_2 = 0\\
+    3X_0 + 2X_1 - X_2 = 0
+\end{cases} \Rightarrow \begin{cases}
+    \left( 1 : -1 : 2 \right)\\
+    \left( 3 : 2 : -1 \right) 
+\end{cases}  
+\]\[
+0 = \begin{vmatrix} U_0 & U_1 & U_2\\ 1 & -1 & 2\\ 3 & 2 & -1 \end{vmatrix} = \boxed{-3U_0 + 7U_1 + 5 U_2 = 0} 
+\]
+
+\section{Ejercicio 11}%
+\label{sec:ejercicio_11}
+Calculemos las intersecciones de los siguientes pares de rectas haciendo uso del dual:
+\[
+L_1 = \{X_0 - X_1 + 2X_2 = 0\},\ L_2 = \{3X_0 + 2X_1 - X_2 = 0\} \Rightarrow
+\begin{cases}    
+L_1 \leftrightarrow \left( 1 : -1 : 2 \right) \in \mathbb{P}^{2^*}_{k}\\
+L_2 \leftrightarrow \left( 3 : 2: -1 \right) \in \mathbb{P}^{2^*}_{k} 
+\end{cases} 
+\]\[
+0 = \begin{vmatrix} U_0 & U_1 & U_2\\ 1 & -1 & 2\\ 3 & 2 & -1 \end{vmatrix} = -3U_0 + 7U_1 + 5U_2 \rightarrow \left( -3 : 7 : 5 \right) \in \mathbb{P}^{2}_{k} 
+\]
+que será el punto de intersección $L_1 \cap L_2$.
+
+Por otro lado,
+\[
+L_3 = \{3X_0 - 2X_1 - X_2 = 0\},\ L_4 = \{2X_0 + 2X_1 + X_2 = 0\} \Rightarrow \begin{cases}
+    L_3 \leftrightarrow \left( 3 : -2 : -1 \right)\\
+    L_4 \leftrightarrow \left( 2 : 2 : 1 \right) 
+\end{cases} 
+\]\[
+0 = \begin{vmatrix} U_0 & U_1 & U_2\\ 3 & -2 & -1\\ 2 & 2 & 1 \end{vmatrix} = -5U_1 + 10U_2 \rightarrow \left( 0 : -1 : 2 \right) \in \mathbb{P}^{2}_{k} 
+\]
+que será el punto de intersección $L_3 \cap L_4$.
+
+Por último, recta que pasa por los dos puntos de intersección $\left( -3 : 7 : 5 \right),\ \left( 0 : -1 : 2 \right)$:
+\[
+    0 = \begin{vmatrix} X_0 & X_1 & X_2\\ -3 & 7 & 5\\ 0 & -1 & 2 \end{vmatrix} = \boxed{19X_0 + 6X_1 + 3X_2 =  0} 
+\]
+
+Podemos hacerlo de otra manera, parametrizamos el haz de rectas de un par y buscamos la recta que pasa por el otro punto de intersección:
+\[
+\left( 0 : -1 : 2 \right) \in \{t_0 \left( X_0 - X_1 + 2X_2 \right) + t_1\left( 3X_0 + 2X_1 - X_2 \right) = 0\} 
+\]\[
+5t_0 - 4t_1 = 0 \Leftrightarrow \left( t_0 : t_1 \right) = \left( 4 : 5 \right) \in \mathbb{P}^{1}_{k} 
+\]
+Y sustituimos $\left( 4, 5 \right)$ en $\left( t_0, t_1 \right)$.
+
+\section{Ejercicio 12}%
+\label{sec:ejercicio_12}
+\begin{enumerate}
+    \item[a)] $Y = X^2 - X + 2$.
+    \[
+    X_0^2\left[ \left( \frac{X_1}{X_0} \right)^2 - \frac{X_1}{X_0} - \frac{X_2}{X_0} + 2 \right] = 0 \rightarrow X_1^2 - X_1X_0 - X_2X_0 + 2X_0^2 = 0
+    \]\[
+    X_0 = 0 \Rightarrow X_1^2 = 0 \Rightarrow X_1 = 0 \Rightarrow \left( 0 : 0 : 1 \right) 
+    \]
+    Como solo hay un punto en el infinito podemos clasificar la curva como parábola.
+
+    \item[b)] $X^2 - Y^2 = 1$
+    \[
+    X_1^2 - X_2^2 - X_0^2 = 0 \rightarrow^{X_0 = 0} X_1^2 - X_2^2 = 0 \Leftrightarrow X_1^2 = X_2^2 \Leftrightarrow X_1 = \pm X_2 
+    \]
+    Puntos en el infinito: $\left( 0 : 1 : -1 \right),\ \left( 0 : 1 : 1 \right)$.
+\end{enumerate}
+
+\end{document}
