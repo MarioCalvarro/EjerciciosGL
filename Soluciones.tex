@@ -319,4 +319,73 @@ Y sustituimos $\left( 4, 5 \right)$ en $\left( t_0, t_1 \right)$.
     Esta curva es la misma que la anterior en el proyectivo.
 \end{enumerate}
 
+\chapter{Hoja 2}%
+\label{cha:hoja_2}
+\section{Ejercicio 1}%
+\label{sec:ejercicio_1}
+\[
+\begin{cases}
+    X_0 - X_2 - X_3 = 0\\
+    X_1 - 2X_2 + X_3 = 0
+\end{cases} \Rightarrow X_0 - X_2 - X_3 + \lambda\left( X_1 - 2X_2 + X_3 \right) = 0
+\]
+contiene a la recta dada.
+
+Si pasa por $\left( 0 : 1 : 1 : 0 \right) \Rightarrow 0 - 1 - 0 + \lambda\left( 1 - 2 \cdot 1 + 0 \right) = 0 \Leftrightarrow -1 - \lambda = 0 \Leftrightarrow \lambda = -1$.
+
+El plano buscado es $X_0 - X_2 - X_3 - \left( X_1 - 2X_2 + X_3 \right) = \ldots = X_0 - X_1 + X_2 - 2X_3 = 0$.
+
+\section{Ejercicio 2}%
+\label{sec:ejercicio_2}
+\[
+    \Pi_1 := 0 = \begin{vmatrix} X_0 & X_1 & X_2 & X_3\\ 0 & 1 & 1 & 1\\ 1 & 0 & 1 & 0\\ 1 & 1 & 0 & 0 \end{vmatrix} = \ldots = X_0 + X_1 - X_2 = 0.
+\]\[
+    \Pi_1 := 0 = \begin{vmatrix} X_0 & X_1 & X_2 & X_3\\ 1 & 0 & 0 & 0\\ 0 & 2 & 1 & 1\\ 1 & 1 & -1 & 0 \end{vmatrix} = \ldots = -X_1 - X_2 + 3X_3 = 0
+\]
+Fijamos un valor tal que $X_3 = 1,\ X_0 = \lambda \Rightarrow$
+\[
+\left( \lambda : \frac{-\lambda + 3}{2} : \frac{\lambda + 3}{2} : 1 \right) 
+\]
+Damos valores a $\lambda$:
+\begin{itemize}
+    \item Si $\lambda = 0$: 
+    \[
+    \left( 0 : \frac{3}{2} : \frac{3}{2} : 1 \right)  
+    \]
+    \item Si $\lambda = 1$: 
+    \[
+    \left( 1 : 1 : 2 : 1 \right) 
+    \]
+\end{itemize}
+Por tanto,
+\begin{align*}
+    \mathbb{P}^{1}_{k} &\rightarrow \mathbb{P} \left( W \right)\\
+    \left( t_0, t_1 \right) &\mapsto \left( \underbrace{t_0 \cdot 0 + t_1\cdot 1}_{= x_0}  : \underbrace{t_0 \cdot \frac{3}{2} + t_1 \cdot 1}_{= x_1}  : \underbrace{t_0 \cdot \frac{3}{2} + t_1 \cdot 2}_{= x_2}  : \underbrace{t_0 + t_1}_{= x_3} \right)
+.\end{align*}
+
+\section{Ejercicio 3}%
+\label{sec:ejercicio_3}
+\textbf{\underline{Disclaimer}: No he entendido nada, posiblemente este mal copiado.} 
+
+Tomamos $\mathbb{P}^{3}_{k}$ como $k^4 / \sim$. 
+
+Identificamos $r \rightarrow \pi \subset K^4\ \{v_0, v_1\}$ y $r' \rightarrow \{v_2, v_3\}$ que será una base porque si no fuesen linealmente idependientes (las siguientes ecuaciones) el determinante de los coeficientes sería $0$: 
+\[
+r : \begin{cases}
+    \sum a_ix_i = 0\\
+    \sum b_i x_i = 0
+\end{cases} 
+\]\[
+r' : \begin{cases}
+    \sum c_i x_i = 0\\
+    \sum d_i x_i = 0
+\end{cases} \Leftrightarrow \det \begin{pmatrix} a_i\\ b_i\\ c_i\\ d_i \end{pmatrix} = 0 \Leftrightarrow \begin{pmatrix} a_i\\ b_i\\ c_i\\ d_i \end{pmatrix} \begin{pmatrix} x_0\\ \ldots\\ x_j? \end{pmatrix} = 0
+\]
+Tenemos?
+\[
+\hat{p} = \underbrace{\alpha_0 v_0 + \alpha_1 v_1}_{\omega_0} + \underbrace{\alpha_2 v_2 + \alpha_3 v_3}_{= \omega_1} 
+\]\[
+l = \alpha\left( \omega_0, \omega_1 \right) \Rightarrow \hat{p} = \omega_0 + \omega_1
+\]
+
 \end{document}
