@@ -369,7 +369,7 @@ Por tanto,
 
 Tomamos $\mathbb{P}^{3}_{k}$ como $k^4 / \sim$. 
 
-Identificamos $r \rightarrow \pi \subset K^4\ \{v_0, v_1\}$ y $r' \rightarrow \{v_2, v_3\}$ que será una base porque si no fuesen linealmente idependientes (las siguientes ecuaciones) el determinante de los coeficientes sería $0$: 
+Identificamos $r \rightarrow \pi \subset K^4\ \{v_0, v_1\}$ y $r' \rightarrow \{v_2, v_3\}$ que será una base porque si no fuesen linealmente independientes (las siguientes ecuaciones) el determinante de los coeficientes sería $0$: 
 \[
 r : \begin{cases}
     \sum a_ix_i = 0\\
@@ -379,7 +379,7 @@ r : \begin{cases}
 r' : \begin{cases}
     \sum c_i x_i = 0\\
     \sum d_i x_i = 0
-\end{cases} \Leftrightarrow \det \begin{pmatrix} a_i\\ b_i\\ c_i\\ d_i \end{pmatrix} = 0 \Leftrightarrow \begin{pmatrix} a_i\\ b_i\\ c_i\\ d_i \end{pmatrix} \begin{pmatrix} x_0\\ \ldots\\ x_j? \end{pmatrix} = 0
+\end{cases} \Leftrightarrow \det \begin{pmatrix} a_i\\ b_i\\ c_i\\ d_i \end{pmatrix} = 0 \Leftrightarrow \begin{pmatrix} a_i\\ b_i\\ c_i\\ d_i \end{pmatrix} \begin{pmatrix} x_0\\ \vdots\\ x_j? \end{pmatrix} = 0
 \]
 Tenemos?
 \[
@@ -387,5 +387,160 @@ Tenemos?
 \]\[
 l = \alpha\left( \omega_0, \omega_1 \right) \Rightarrow \hat{p} = \omega_0 + \omega_1
 \]
+\[
+r : \begin{cases}
+    X_1 = 0\\
+    X_0 - X_2 + X_3 = 0
+\end{cases} \rightarrow \begin{cases}
+    v_0 = \left( 1, 0, 1, 0 \right) \\
+    v_1 = \left( 1, 0, 0, -1 \right) 
+\end{cases} 
+\]\[
+r' : \begin{cases}
+    X_2 = 0\\
+    X_0 - X_3 = 0
+\end{cases} \rightarrow \begin{cases}
+    v_2 = \left( 1, 0, 0, 1 \right) \\
+    v_3 = \left( 1, 1, 0, 1 \right) 
+\end{cases} 
+\]
+Que son base.
+\[
+p = \left[ \underbrace{\left( 0, 1, -1, 1 \right)}_{\overrightarrow{p}} \right];\ \overrightarrow{p} = \underbrace{-v_0}_{\in r} + \underbrace{v_3}_{\in r'} 
+\]\[
+l = \alpha\left( v_0, v_3 \right) \rightarrow l = \{\lambda \left( v_0 \right) + \mu v_3 | \left( \lambda, \mu \right) \in k^2\} \rightarrow
+\]
+Vamos de $k^4$ al proyectivo:
+\[
+\{\left( \lambda + \mu : \mu : \lambda : \mu \right) | \left( \lambda : \mu \right) \in \mathbb{P}^{1}_{k}\} 
+\]
+Parametrización de la recta.
+
+\underline{Geométricamente}: 
+
+La recta solución $l$ debe estar contenida en el plano $\pi$ formado por la recta $r$ y el punto $P$. Este plano se cortará con $p'$ en otro punto que también estará contenido en $l$ por lo que tenemos dos puntos, distintos, contenidos en la recta $\Rightarrow l = \langle p, p' \rangle \subset \pi$.
+
+\section{Ejercicio 5}%
+\label{sec:ejercicio_5}
+% No he entendido nada
+Recordamos que $\mathbb{P}^{2}_{k} = \mathbb{A}^{2}_k \cup \mathbb{P}^{1}_{k}$ y $\mathbb{P}^{1}_{k} = \mathbb{A}^{1}_k \cup \{\left( 0 : 1 \right)\}$. Tenemos que $\lvert \mathbb{A}^{2}_k \rvert = p$ y $\lvert \mathbb{A}^{2}_k \rvert = p^2 \Rightarrow$ 
+\[
+\lvert \mathbb{P}^{2}_{k} \rvert = p^2 + p + 1
+\]
+
+Por otra parte, 
+\begin{align*}
+    \mathbb{P}^{2}_{k} &\rightarrow^{\Omega} \mathbb{P}^{2^*}_{k} \\
+    \Lambda &\mapsto \Omega\left( \Lambda \right) 
+.\end{align*}
+Con $\Omega$ biyección y $\Omega\left( \mathbb{P}^{2}_{k} \right) = \mathbb{P}^{2^*}_{k} $
+%Completar
+
+(Ejemplo $2.11$)
+\[
+\overline{L} \subset \mathbb{P}^{2}_{k} \quad \overline{L} \rightarrow \mathbb{P}^{1}_{k} 
+\]
+($L \subset \mathbb{A}^{2}_k$) Parametrización de $L$, biyección $\Rightarrow$ en cada recta $\overline{L} \subset \mathbb{P}^{2}_{k}$ hay $p + 1$ puntos.
+
+Otra cosa, 
+\[
+U_0X_0 + U_1X_1 + U_2X_2 = 0
+\]
+\begin{itemize}
+    \item $X_0 = 0 \Rightarrow U_1X_1 + U_2X_2 = 0\ \left( U_1 \text{ ó } U_2 \neq 0 \right)$. 
+    \[
+    X_2 = -\frac{U_1}{U_2} X_1 \Rightarrow \left( 0 : X_1 : -\frac{u_1}{u_2} X_1 \right),\ \left( 0 : 1 : -\frac{U_1}{U_2} \right) \in \mathbb{P}^{2}_{k} 
+    \]
+    \item $X_0 \neq 0 \left( X_0 = 1 \right) \Rightarrow U_0 + U_1X_1 + U_2X_2 = 0$:
+    \[
+    X_2 = -\frac{\left( U_0 + U_1X_1 \right)}{U_2} \Rightarrow \left( 1 : X_1 : -\frac{\left( U_0 + U_1X_1 \right)}{U_1} \right)
+    \]
+\end{itemize}
+
+\section{Ejercicio 7}%
+\label{sec:ejercicio_7}
+(Hemos cambiado $C$ y $D$)
+
+$L_{\infty}$ será aquella formada por los dos puntos en el infinito que surgen de la intersección de las rectas paralelas del paralelogramo.
+
+Tenemos $A = \left( 1 : 0 : 1 \right), B = \left( 1 : -1 : 0 \right), C = \left( 0 : 2 : 1 \right), D = \left( 0 : 0 : 1 \right)$.
+\begin{align*}
+    \begin{cases}
+        \overline{AB} &= \begin{vmatrix} X_0 & X_1 & X_2\\ 1 & 0 & 1\\ 1 & -1 & 0 \end{vmatrix} = X_1 - X_2 + X_0 = 0\\    
+        \overline{CD} &= 2X_0 = 0 \Leftrightarrow X_0 = 0
+    \end{cases} 
+.\end{align*} 
+Lo que nos da:
+\[
+    \begin{vmatrix} \mu_0 & \mu_1 & m_2\\ 1 & -1 & 1\\ 1 & 0 & 0 \end{vmatrix} = -\mu_1 - \mu_2 = 0 \Rightarrow P = \left( 0 : 1 : 1 \right) 
+\]
+Por otro lado:
+\begin{align*}
+    \begin{cases}
+        \overline{AC} &= 2X_2 - 2X_0 - X_1 = 0\\
+        \overline{BD} &= X_0 + X_1 = 0
+    \end{cases} \Rightarrow
+    P' = \left( 2 : -2 : 1 \right) 
+.\end{align*}
+En consiguiente: 
+\[
+    L_{\infty} = \begin{vmatrix} X_0 & X_1 & X_2\\ 0 & 1 & 1\\ 2 & -2 & 1 \end{vmatrix} = 3X_0 + 2X_1 - 2X_2 = 0
+\]
+
+\section{Ejercicio 8}%
+\label{sec:ejercicio_8}
+\textbf{Ni idea de este.} 
+
+Sea
+\[
+\overline{f}: \mathbb{A}_{\mathbb{R}^2} \rightarrow \mathbb{A}_{\mathbb{R}^3}   
+\]
+(\textit{Foto composición}) $f \circ L_2 = L_3 \circ \overline{f}$.
+\begin{align*}
+    L_2\left( x, y \right) = \left( 1 : x : y \right)\\
+    L_3\left( x, y, z \right) = \left( 1 : x : y : z \right) 
+.\end{align*}
+Por tanto, 
+\begin{itemize}
+    \item $f \left( 1 : 1 : 0 \right) = \left( 1 : 1 : 0 : 2 \right)$
+    \item $f \left( 1 : 1 : 2 \right) = \left( 1 : 0 : 1 : 1 \right)$
+    \item $f \left( 1 : 2 : 0 \right) = \left( 1 : 2 : 0 : 0 \right)$
+    \item $\overrightarrow{f} \left( \overrightarrow{PQ} \right) = \overrightarrow{f\left( P \right) f\left( Q \right)}$.
+    \item $\overrightarrow{f} \left( 0, 2 \right) = \left( -1, 1, -1 \right) \Rightarrow f$
+    \item $\overrightarrow{f} \left( 1, 0 \right) = \left( 1, 0, -2 \right)$
+\end{itemize}
+Por tanto?
+\[
+    M\left( \overline{f}, R, R_{CAR^3} \right) = \begin{pmatrix} 1 & 0 & 0\\ 1 & 1 & -1/2\\ 0 & 0 & 1/2\\ 2 & -2 & -1/2 \end{pmatrix} 
+\]
+Como $f\left( 0 \right) = \left( 0, 0 , 4 \right) \Rightarrow$
+\[
+    M\left( f, R_{CAR^2}, R_{CAR^3} \right) = \begin{pmatrix} 1 & 0 & 0\\ 0 & 1 & -1/2\\ 0 & 0 & 1/2\\ 4 & -2 & -1/2 \end{pmatrix} 
+\]
+
+\section{Ejercicio 9}%
+\label{sec:ejercicio_9_2}
+Tenemos: 
+\begin{align*}
+    X^2 + Y^2 = 1 \rightarrow^f &X^2 + Y^2 - 2X - 2Y = 2\\
+    &X^2 - 2Y + 1 + Y^2 - 2Y + 1 = 4\\
+    &\left( X - 1 \right)^2 + \left( Y - 1 \right)^2 = 4
+.\end{align*}
+Por tanto, $f = $ (translacción de $\left( 1, 1 \right))$ $\circ$ (homotecia de razón $2$).
+
+Es decir,
+\[
+    M_f = \begin{pmatrix} 1 & 0 & 0\\ 1 & 1 & 0\\ 1 & 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & 0 & 0\\ 0 & 2 & 0\\ 0 & 0 & 2 \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0\\ 1 & 2 & 0\\ 1 & 0 & 2 \end{pmatrix}
+\]
+Con lo que, $A$ matriz de la aplicación asociada $\overrightarrow{f}$. 
+\[
+    A^tA = \lambda I_2 \Rightarrow \begin{pmatrix} 2 & 0\\ 0 & 2 \end{pmatrix} \begin{pmatrix} 2 & 0\\ 0 & 2 \end{pmatrix} = \begin{pmatrix} 4 & 0\\ 0 & 4 \end{pmatrix} = 4I_2
+\]
+Finalmente, 
+\[
+    \begin{pmatrix} 1 & 0 & 0\\ 1 & 2 & 0\\ 1 & 0 & 2 \end{pmatrix} \begin{pmatrix} 1\\ x\\ y \end{pmatrix} \mapsto \begin{pmatrix} 1\\ x'\\ y' \end{pmatrix} 
+\]
+
+
 
 \end{document}
