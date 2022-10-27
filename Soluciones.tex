@@ -541,6 +541,83 @@ Finalmente,
     \begin{pmatrix} 1 & 0 & 0\\ 1 & 2 & 0\\ 1 & 0 & 2 \end{pmatrix} \begin{pmatrix} 1\\ x\\ y \end{pmatrix} \mapsto \begin{pmatrix} 1\\ x'\\ y' \end{pmatrix} 
 \]
 
+\section{Ejercicio 10}%
+\label{sec:ejercicio_10_2}
+Tenemos $P = \left( 1 : 0 : 0 \right), Q = \left( 0 : 0 : 1 \right), R = \left( 1 : 0 : 1 \right), \alpha = x_0 + x_1 + x_2 = 0$
 
+Por tanto,
+\[
+    \text{Recta } PQ = \begin{vmatrix} X_0 & X_1 & X_2\\ 1 & 0 & 0\\ 0 & 0 & 1 \end{vmatrix} = -x_1 = 0 \Rightarrow x_1 = 0
+\]
+\textit{Dibujo} 
+
+//Corte $PQ$ con $\alpha_{\infty} = \mathcal{U}_0 - \mathcal{U}_2$. $PQ$ por $S = x_0 + x_2 = 0$.
+
+Corte $PS$ con $\alpha_{\infty} = \mathcal{U}_1 - \mathcal{U}_0 = 0$
+
+$a \Rightarrow // PS$ por $Q: x_0 + x_1 = 0$. $S': $ corte $a$ y $PS: \mathcal{U}_1 + \mathcal{U}_2 - \mathcal{U}_0 = g\left( s \right)$.
+
+$SR: x_0 - x_2 = 0$ corte $SR$ con $\alpha_{\infty}: \mathcal{U}_0 - 2\mathcal{U}_1 + \mathcal{U}_2$
+
+$b \Rightarrow // SR$ por $S': 3x_0 + 2x_1 + x_2 = 0$. Corte $b$ y $PQ: 3\mathcal{U}_2 - \mathcal{U}_0 \rightarrow R' = \left( -1 : 0 : 3 \right)$.
+
+\section{Ejercicio 11}%
+\label{sec:ejercicio_11_2}
+Sea $\{e_1, e_2, e_3\}$ la b.c de $k^3$ y $\{c_1, c_2, c_3, c_4\}$ la de $k^4$.
+
+\begin{itemize}
+    \item 
+Dado $\varphi: \mathbb{P}^{2}_{k} \dashrightarrow \mathbb{P}^{3}_{k}$ aplicación proyectiva tal que:
+\begin{align*}
+    \varphi \left( 1 : 0 : 0 \right) = \left( 1 : 0 : 0 : 0 \right)\\
+    \varphi \left( 0 : 1 : 0 \right) = \left( 0 : 1 : 0 : 0 \right)\\ 
+    \varphi \left( 0 : 0 : 1 \right) = \left( 0 : 0 : 1 : 0 \right)\\
+.\end{align*}
+entonces $\exists f: k^3 \dashrightarrow k^4$ tal que: 
+\begin{align*}
+    \varphi\left( 1 : 0 : 0 \right) = \left[ f\left( e_1 \right) \right] = \left[ \lambda_1c_1 \right]\\
+    \varphi\left( 0 : 1 : 0 \right) = \left[ f\left( e_2 \right) \right] = \left[ \lambda_2c_2 \right]\\
+    \varphi\left( 0 : 0 : 1 \right) = \left[ f\left( e_3 \right) \right] = \left[ \lambda_3c_3 \right]\\
+.\end{align*}
+entonces:
+\[
+f\left( \sum_{i=1}^{3} \lambda_ic_i \right) = \sum_{i=1}^{3} \lambda_ic_i \neq \lambda c_4,\ \lambda \neq 0 
+\]
+ya que es base, luego $\varphi\left( 1 : 1 : 1 \right) \neq \left( 0 : 0 : 0 : 1 \right)$.
+
+    \item 
+Sea $Q\left( \varphi \right) := \varphi$ es una proyectividad de $\mathbb{P}^{2}_{k}$ y $\mathbb{P}^{3}_{k}$. 
+\begin{gather*}
+P\left( \varphi \right) := Q\left( \varphi \right) \land \varphi\left( 1 : 0 : 0 \right) =\\
+= \left( 1 : 0 \right) \land \varphi\left( 0 : 1 : 0 \right) = \left( 0 : 1 \right) \land \varphi\left( 0 : 0 : 1 \right) = \left( 1 : 1 \right) \land \varphi\left( 1 : 1 : 1 \right) = \left( 1 : 1 \right)     
+.\end{gather*}
+
+Sea $\Omega = \{\varphi : P\left( \varphi \right) \}$. 
+
+Definimos $f: K\setminus \{0, 1, -1\} \rightarrow \Omega$ tal que $f_z$ tiene aplicación lineal asociada $h_z: k^3 \rightarrow k^2$ tal que
+\begin{align*}
+    h_z\left( e_1 \right) = \left( -1 + z \right) c_1\\
+    h_z\left( e_2 \right) = \left( -1 - z \right) c_2\\
+    h_z\left( e_3 \right) = c_1 + c_2\\
+.\end{align*}
+entonces: 
+\begin{align*}
+    f_z\left( 1 : 0 : 0 \right) = \left[ \left( -1 + z \right) c_1 \right] = \left( 1 : 0 \right)\\
+    f_z\left( 0 : 1 : 0 \right) = \left[ \left( -1 - z \right) c_2 \right] = \left( 0 : 1 \right)\\
+    f_z\left( 0 : 0 : 1 \right) = \left[ c_1 + c_2\right] = \left( 1 : 1 \right)\\
+    f_z\left( 1 : 1 : 1 \right) = \left[ ze_1 - ze_2 \right] = \left( 1 : -1 \right)\\
+.\end{align*}
+luego $f$ está bien definida.
+\[
+f_z\left( 1 : 0 : e \right) = \left[ ze_1 + e_2 \right] = \left( z : 1 \right) 
+\]
+luego $f$ es inyectiva.
+\begin{align*}
+    f\left( e_1 \right) &= \lambda_1 e_1\\
+    f\left( e_2 \right) &= \lambda_2 e_2\\
+    f\left( e_3 \right) &= \lambda_3 \left( e_1 + e_2 \right) \\
+    f\left( \sum e_i  \right) &= \lambda_4 \left( e_1 - e_2 \right)
+.\end{align*}
+\end{itemize}
 
 \end{document}
