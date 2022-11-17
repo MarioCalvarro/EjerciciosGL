@@ -826,5 +826,139 @@ M\left( f, \mathcal{R}_c, \mathcal{R}_c \right) = M\left( \overrightarrow{f}, B_
 \]\[
 \begin{pmatrix} 1 & 0 & 1\\ 0 & 1 & 0\\ 0 & 1 & -1 \end{pmatrix} \begin{pmatrix} 1/2 & & \\& 1/2 &\\ & & 1 \end{pmatrix} \begin{pmatrix} 1 & 0 & 1\\ 0 & 1 & 0\\ 0 & 1 & -1 \end{pmatrix} = \begin{pmatrix} 1 & 1 & -1\\ 0 & 1 & 0\\ 0 & -1 & 2 \end{pmatrix} 
 \]
+\section{Ejercicio 7}%
+\label{sec:ejercicio_7_3}
+Tenemos como referencia proyectiva, $\mathcal{R} = \{p_0, p_1, p_2, p_3\}$. 
+
+Veamos que $p_2, p_1$, son l.i:
+\[
+    \begin{vmatrix} 1 & 0 & 0\\ 1 & 1 & 1\\ 0 & 0 & 2 \end{vmatrix} = 2 \neq 0 \Rightarrow l.i
+\]
+Tomamos ahora, $\lambda_0, \lambda_1, \lambda_2, \lambda \in \mathbb{R}$. 
+\[
+\lambda_0\left( 1, 1, 0 \right) + \lambda_1\left( 0, 1, 0 \right) + \lambda_2\left( 0, 1, 2 \right) = \lambda\left( 1, 0, 1 \right) 
+\]\[
+\begin{cases}
+    \lambda_0 = \lambda\\
+    \lambda_0 + \lambda_1 + \lambda_2 = 0\\
+    2\lambda_2 = \lambda
+\end{cases} \Rightarrow_{\lambda = 1} \begin{cases}
+   \lambda_0 = 1\\
+   \lambda_2 = -1/2\\
+   \lambda_1 = -\frac{1}{2} 
+\end{cases} \Rightarrow_{\lambda = 2} \begin{cases}
+    \lambda_0 = 2\\
+    \lambda_2 = -1\\
+    \lambda = -1
+\end{cases} 
+\]\[
+\left( 2, 2, 0 \right) + \left( 0, -1, 0 \right) + \left( 0, -1, -2 \right) = \left( 2, 0, -2 \right) 
+\]
+Con $B = \{\left( 2, 2, 0 \right), \left( 0, -1, 0 \right), \left( 0, -1, -2 \right) \}$.
+
+La matriz será:
+\[
+    M\left( B, B_c \right) = \begin{pmatrix} 2 &  0 & 0\\ 2 & -1 & -1\\ 0 & 0 & 2 \end{pmatrix} 
+\]\[
+\begin{pmatrix} x_0\\ x_1\\ x_2 \end{pmatrix} = M\left( B, B_c \right) \begin{pmatrix} x_0'\\ x_1'\\ x_2' \end{pmatrix} 
+\]\[
+\begin{pmatrix} x_0'\\ x_1'\\ x_2' \end{pmatrix} = M\left( B_c, B \right) \begin{pmatrix} x_0\\ x_1\\ x_2 \end{pmatrix} 
+\]\[
+M\left( B_c, B \right) = M^{-1}\left( B, B_c \right) 
+\]\[
+    M^{-1}\left( B, B_c \right) = \frac{1}{2} \begin{pmatrix} 1 & 0 & 0\\ 1 & -1 & -1\\ 0 & 0 & 1 \end{pmatrix} 
+\]
+Para $\left( 1 : 1 : 2 \right)$ tendríamos:
+\[
+\frac{1}{2} \begin{pmatrix} 1 & 0 & 0\\ 1 & -1 & -1\\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 1\\ 1\\ 2 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} 1\\ 2\\ -2 \end{pmatrix} \Rightarrow \left( 1 : 1 : -2 \right)_{\mathcal{R}_c} = \left( 1 : 2 : -2 \right)_{\mathcal{R}} 
+\]
+y para $\left( -1 : 1 : 1 \right)$
+\[
+\frac{1}{2} \begin{pmatrix} 1 & 0 & 0\\ 1 & -1 & -1\\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} -1\\ 1\\ 1 \end{pmatrix} = \frac{1}{2} \begin{pmatrix} -1\\ -1\\ 1 \end{pmatrix} \Rightarrow \left( -1 : 1 : 1 \right)_{\mathcal{R}_c} = \left( -1 : -1 : 1 \right)_{\mathcal{R}} 
+\]
+
+\section{Ejercicio 9}%
+\label{sec:ejercicio_9_3}
+Tenemos dos referencias:
+\begin{align*}
+    \mathcal{R}_1 &= \{\left( 1 : -1 : 0 \right), \left( 0 : 2 : -1 \right), \left( 1 : -1 : 1 \right), \left( 0 : -1 : 1 \right)\} \\    
+    \mathcal{R}_2 &= \{\left( 1 : 0 : 1 \right), \left( 1 : 1 : 1 \right), \left( 0 : 1 : 1 \right), \left( 2 : 2 : 3 \right)\}    
+.\end{align*}
+que denominamos por $p_i$ y $p_i'$, respectivamente.
+
+En $\mathcal{R}_1$ 
+\begin{gather*}
+\left( 0, -1, 1 \right) = \lambda_0 \left( 1, -1, 0 \right) + \lambda_1 \left( 0, 2, -1 \right) + \lambda_2 \left( 1, -1, 1 \right)\\
+\begin{cases}
+    \lambda_0 = -1/2\\
+    \lambda_1 = -1/2\\
+    \lambda_2 = 1/2
+\end{cases} 
+.\end{gather*}
+
+En $\mathcal{R}_2$ vemos que: $v' + v_1' + v_2' = v_3'$ con $\left[ v_i \right] = p_i$ y $\lambda_0', \lambda_1', \lambda_2' = 1$.
+
+Por lo tanto, nos queda que:
+\begin{align*}
+    B_1 &= \{-1/2 v_0, -1/2 v_1, 1/2 v_2\}\\
+    B_2 &= \{v_0', v_1', v_2'\}
+.\end{align*}
+
+Tenemos que:
+\[
+    A = M_{B_1, B_2} = \frac{1}{2} \begin{pmatrix} -1 & 3 & 2\\ 0 & -3 & -1\\ 1 & 1 & 0 \end{pmatrix} 
+\]
+Sea $L := X_2 - 2X_0 - X_1 = 0$. Tomamos $2$ puntos: $\left( 0 : 1 : 1 \right), \left( -1 : 2 : 0 \right)$ y los pasamos a la otra base:
+
+Aplicando $A$:
+\begin{gather*}
+    A \begin{pmatrix} 0\\ 1\\ 1 \end{pmatrix}_{B_1}  = \begin{pmatrix} 5\\ -4\\ 1 \end{pmatrix}_{B_2}\\
+    A \begin{pmatrix} -1\\ 2\\ 0 \end{pmatrix}_{B_1}  = \begin{pmatrix} 7\\ -6\\ 1 \end{pmatrix}_{B_2} 
+.\end{gather*}
+En definitiva, vemos la recta que forman en esta nueva base:
+\[
+    \begin{vmatrix} X_0 & X_1 & X_2\\ 5 & -4 & 1\\ 7 & -6 & 1 \end{vmatrix} = \boxed{X_0 + X_1 - X_2 = 0} 
+\]
+
+\section{Ejercicio 10}%
+\label{sec:ejercicio_10_3}
+Debemos pasar de:
+\[
+\begin{cases}
+    L_1 : X_2 = X_0 + X_1 \rightarrow L_1^* : \left( 1 : 1 : -1 \right) \\
+    L_2 : X_0 = X_2 \rightarrow L_2^* : \left( 1 : 0 : -1 \right) \\
+    L_3 : X_1 = 2X_0 \rightarrow L_3^* : \left( 2 : -1 : 0 \right) 
+\end{cases} 
+\]
+a: 
+\[
+\begin{cases}
+    L_1 : X_0' = 0 \rightarrow L_1'^* : \left( 1 : 0 : 0 \right) \\
+    L_2 : X_1' = 0 \rightarrow L_2'^* : \left( 0 : 1 : 0 \right)\\
+    L_3 : X_2' = 0 \rightarrow L_3'^* : \left( 0 : 0 : 1 \right)
+\end{cases} 
+\]
+Tenemos:
+\[
+    \begin{vmatrix} 1 & 1 & -1\\ 1 & 0 & -1\\ 2 & -1 & 0 \end{vmatrix} \neq 0
+\]
+Con $B^*, \mathcal{R}^*; \{\alpha\left( 1, 1, -1 \right), \beta\left( 1, 0, -1 \right), \gamma\left( 2, -1, 0 \right)\}$.
+
+La matriz de cambio de base:
+\[
+    M\left( B^*, B^*_c \right) = \begin{pmatrix} \alpha & \beta & 2\gamma\\ \alpha & 0 & -\gamma\\ -\alpha & -\beta & 0 \end{pmatrix}; M\left( x_0'\\ x_1'\\ x_2' \right) = \begin{pmatrix} x_0\\ x_1\\ x_2 \end{pmatrix}  
+\]
+Tomando $\alpha = \beta = \gamma = 1$. 
+
+Tenemos también que:
+\[
+M\left( B^*, B^*_c \right)^t M\left( B, B_c \right) = I
+\]
+Por tanto, 
+\[
+    M\left( B, B_c \right) = \left( M\left( B^*, B^*_c \right)^t \right)^{-1} = \begin{pmatrix} 1/2 & -1/2 & 1/2\\ 1 & -1 & 0\\ 1/2 & -3/2 & 1/2 \end{pmatrix} 
+\]
+Con lo que nos queda que: $\mathcal{R} = \{\left( 1 : 2 : 1 \right), \left( -1 : -2 : -3 \right), \left( 1 : 0 : 1 \right), \left( 1 : 0 : -1 \right)\}$.
+
 
 \end{document}
