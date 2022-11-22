@@ -960,5 +960,107 @@ Por tanto,
 \]
 Con lo que nos queda que: $\mathcal{R} = \{\left( 1 : 2 : 1 \right), \left( -1 : -2 : -3 \right), \left( 1 : 0 : 1 \right), \left( 1 : 0 : -1 \right)\}$.
 
+\section{Ejercicio 11}%
+\label{sec:ejercicio_11_3}
+\begin{align*}
+    f: \mathbb{P}^{2}_{k} &\rightarrow \mathbb{P}^{2}_{k} \\
+    \left( 1 : -1: 0 \right) &\mapsto \left( 1 : 0 : 1 \right) \\
+    \left( 0 : 2 : -1 \right) &\mapsto \left( 1 : 1 : 1 \right)\\
+    \left( 1 : -1: 1 \right) &\mapsto \left( 0 : 1 : 1 \right)\\
+    \left( 0 : -1 : 1 \right) &\mapsto \left( 2 : 2 : 3 \right) 
+.\end{align*}
+Tomamos como referencia proyectiva: $\mathcal{R} = \{\left( 1 : -1 : 0 \right), \left( 0 : 2 : -1 \right), \left( 0 : -1 : 1 \right), \left( 1 : -1 : 1 \right)\}$. La base asociada será, $B = \{\left( 1, -1, 0 \right), \left( 0, 2, -1 \right), \left( 0, -2, 2 \right)\}$.
+
+Debemos comprobar que es referencia haciendo determinantes.
+
+Tomamos ahora otro con las imágenes: $\mathcal{R}' = \{\left( 1 : 0 : 1 \right), \left( 1 : 1 : 1 \right), \left( 2 : 2 : 3 \right), \left( 0 : 1 : 1 \right)\}$. La base asociada será: $B' = \{\left( -1, 0, -1 \right), \left( -1, -1, -1 \right), \left( 2, 2, 3 \right)\}$.
+
+Tendremos ahora: 
+\[
+\overrightarrow{f}: \mathbb{R}^3 \rightarrow \mathbb{R}^3\\
+\]
+\begin{align*}
+    \begin{cases}
+    \overrightarrow{f}\left( e_1 \right) - \overrightarrow{f} \left( e_2 \right) = \overrightarrow{f} \left( e_1 - e_2 \right) = -e_1 - e_3\\
+    2\overrightarrow{f}\left( e_2 \right) - \overrightarrow{f}\left( e_3 \right) = \overrightarrow{f} \left( 2e_2 - e_3 \right) = -e_1 - e_2 - e_3\\
+    -2 \overrightarrow{f} \left( e_2 \right) + 2\overrightarrow{f} \left( e_3 \right) = \overrightarrow{f} \left( -2e_2 + 2e_3 \right) = 2e_1 + 2e_2 + 3e_3    
+    \end{cases} 
+.\end{align*}
+
+Resolviendo el sistema tenemos:
+\[
+\begin{cases}
+    \overrightarrow{f} \left( e_3 \right) = e_1 + e_2 + 2e_3\\
+    \overrightarrow{f} \left( e_2 \right) = \frac{1}{2} e_3\\
+    \overrightarrow{f} \left( e_1 \right) = -e_1 - \frac{1}{2} e_3
+\end{cases} 
+\]
+
+Tendremos ahora:
+\[
+    M_{B_cB_c} \left( \overrightarrow{f} \right) = \begin{pmatrix} -1 & 0 & 1\\ 0 & 0 & 1\\ -1/2 & 1/2 & 2 \end{pmatrix} \Rightarrow M_{R_cR_c} \left( f \right) = \begin{pmatrix} -2 & 0 & 2\\ 0 & 0 & 2\\ -1 & 1 & 4 \end{pmatrix} 
+\]
+Finalmente tenemos:
+\[
+\boxed{f\left( X_0 : X_1 : X_2 \right) = \left( -2X_0 + 2X_2 : 2X_2 : -X_0 + X_1 + 4X_2 \right) } 
+\]
+
+\section{Ejercicio 15}%
+\label{sec:ejercicio_15_3}
+Sean: 
+\begin{align*}
+    \Pi_0 &: X_0 - X_1 = 0 \rightarrow \left( 1 : -1 : 0 : 0 \right) \\
+    \Pi_1 &: X_1 - X_2 = 0 \rightarrow \left( 0 : 1 : -1 : 0 \right)\\
+    \Pi_2 &: X_2 - X_3 = 0 \rightarrow \left( 0 : 0 : 1 : -1 \right)\\
+    \Pi_3 &: X_0 + X_3 = 0 \rightarrow \left( 1 : 0 : 0 : 1 \right)\\
+    \Pi_4 &: X_0 = 0 \rightarrow \left( 1 : 0 : 0 : 0 \right)
+.\end{align*}
+
+La referencia será los primeros puntos con punto fijo el último.
+\[
+\alpha\left( 1, -1, 0, 0 \right) + \beta\left( 0, 1, -1, 0 \right) + \lambda\left( 0, 0, 1, -1 \right) + \mu\left( 1, 0, 0, 1 \right) = \omega\left( 1, 0, 0, 0 \right) 
+\]
+Resolviendo nos queda que $\alpha = \beta = \lambda = \mu$ y $\alpha = \omega/2 \Rightarrow^{\omega = 1} \alpha = \beta = \lambda = \mu = 1/2$.
+
+Debemos ver también que son linealmente independientes.
+\[
+    \begin{vmatrix} 1 & -1 & 0 & 0\\ 0 & 1 & -1 & 0\\ 0 & 0 & 1 & -1\\ 1 & 0 & 0 & 1
+    \end{vmatrix} \Rightarrow 2 \neq 0
+\]
+Esta referencia la denotaremos como $\mathcal{R}^*$.
+
+Por otro lado, 
+\[
+L : \begin{cases}
+    X_0 - X_2 = 0 \rightarrow \left( 1 : 0 : -1 : 0 \right) \\
+    X_1 - X_3 = 0 \rightarrow \left( 0 : 1 : 0 : -1 \right) 
+\end{cases} 
+\]
+Entonces tenemos que: 
+\[
+L_{\mathcal{R}_c^*} = \langle \overbrace{\left( 1 : 0 : -1 : 0 \right)}^{\langle u_1 \rangle}, \overbrace{\left( 0 : 1 : 0 : -1 \right)}^{\langle u_2 \rangle} \rangle = t_0 u_1 + t_1u_2 = \left( t_0 : t_1 : -t_0 : -t_1 \right) 
+\]
+La relación entre $\mathcal{R}^*$ y $\mathcal{R}_c^*$ es:
+\[
+    M\left( \mathcal{R}^*, \mathcal{R}_c^* \right) = \begin{pmatrix} 1 & 0 & 0 & 1\\ -1 & 1 & 0 & 0\\ 0 & -1 & 1 & 0\\ 0 & 0 & -1 & 1 \end{pmatrix} \Rightarrow^{\text{Invertimos}} M\left( \mathcal{R}_c^*, \mathcal{R}^* \right) = \frac{1}{2} \begin{pmatrix} 1 & -1 & -1 & -1\\ 1 & 1 & -1 & -1\\ 1 & 1 & 1 & -1\\ 1 & 1 & 1 & 1 \end{pmatrix}
+\]
+Por último,
+\[
+M\left( \mathcal{R}_c^*, \mathcal{R}^* \right) \begin{pmatrix} t_0\\ t_1\\ -t_0\\ -t_1 \end{pmatrix} = \begin{pmatrix} t_0\\ t_0 + t_1\\ t_1\\ 0 \end{pmatrix} 
+\]
+Que es equivalente a: 
+\[
+L_{\mathcal{R}^*} : \begin{cases}
+    U_1 = U_0 + U_2\\
+    U_3 = 0
+\end{cases} 
+\]
+Otra forma sería ver directamente los puntos que salen de $L$ como combinación lineal de los puntos de la referencia:
+\begin{align*}
+    u_1 &= \left( 1 : 1 : 0 : 0 \right)_{\mathcal{R}^*} \\
+    u_2 &= \left( 0 : 1 : 1 : 0 \right)_{\mathcal{R}^*} 
+.\end{align*}
+
+Y la solución sería la recta que forman. Funciona porque la base asociada es igual a los representantes de la referencia.
 
 \end{document}
