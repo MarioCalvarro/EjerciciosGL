@@ -1063,4 +1063,358 @@ Otra forma sería ver directamente los puntos que salen de $L$ como combinación
 
 Y la solución sería la recta que forman. Funciona porque la base asociada es igual a los representantes de la referencia.
 
+\chapter{Hoja 4}%
+\label{cha:hoja_4}
+\section{Ejercicio 1}%
+\label{sec:ejercicio_1_4}
+Tenemos:
+\[
+C : aX_0^2 + bX_0 X_1 + cX_0X_2 + dX_1^2 + eX_1X_2 + fX_2^2 = 0
+\]
+Por tanto:
+\begin{align*}
+    \left( 1 : 0 : 1 \right) &\in C \Rightarrow a + c + f = 0\\
+    \left( 0 : 0 : 1 \right) &\in C \Rightarrow f = 0\\
+    \left( 1 : -1 : 1 \right) &\in C \Rightarrow a - b + c + d - e + f = 0\\
+    \left( 1 : 1 : 2 \right) &\in C \Rightarrow a + b + 2c + d + 2e - 4f = 0\\
+    \left( 1 : 2 : -1 \right) &\in C \Rightarrow a + 2b - c + 4d - 2e + f = 0
+.\end{align*}
+Lo que nos da un sistema que resolvemos y tenemos:
+\[
+\begin{cases}
+   e = 5\\
+   d = 1\\
+   b = -4\\
+   a = 7\\
+   c = -7\\
+   f = 0
+\end{cases} 
+\]
+Por lo que la ecuación final sería:
+\[
+C : 7X_0^2 - 4X_0X_1 - 7X_0X_2 + X_1^2 + 5X_1X_2 = 0
+\]
+
+\section{Ejercicio 2}%
+\label{sec:ejercicio_2_4}
+Tenemos:
+\begin{align*}
+A : X_0X_2 - X_1^2 = 0\\
+B : X_0X_1 + 2X_0X_2 - X_1^2 - X_1X_2 = 0   
+.\end{align*}
+El haz será: $t_0A + t_1B = 0, \left( t_0 : t_1 \right) \in \mathbb{P}^{1}_{k}$.
+
+En forma matricial será:
+\[
+    \begin{pmatrix} X_0 & X_1 & X_2 \end{pmatrix} \begin{pmatrix} 0 & t_1/2 & -t_0/2 + t_1\\
+t_1/2 & t_0 - t_1 & -t_1/2\\
+-t_0/2 & -t_1/2 & 0\end{pmatrix} \begin{pmatrix} X_0\\ X_1\\ X_2 \end{pmatrix} = 0
+\]
+Imponemos que su determinante sea $0$, de esta forma sera degenerada:
+\[
+0 = \begin{vmatrix} 0 & t_1/2 & -t_0/2 + t_1\\
+t_1/2 & t_0 - t_1 & -t_1/2\\
+-t_0/2 & -t_1/2 & 0 \end{vmatrix} 
+\]
+Por tanto, 
+\[
+2 \left( -t_0 + 2t_1 \right) \left( t_1^2 + t_0^2 - 3t_1t_0 \right) = 0
+\]
+Y $2A + B = 0$ y $t_0A + t_1B = 0$.
+
+\section{Ejercicio 4}%
+\label{sec:ejercicio_4_4}
+Tenemos que $f: \mathbb{P}^{3}_{k} \rightarrow \mathbb{P}^{3^*}_{k}$ y:
+\[
+\begin{cases}
+    \left( 0 : 0 : 0 : 1 \right) &\mapsto X_1 + 2X_2 - 4X_3 = 0 \leftrightarrow \left( 0 : 1 : 2 : -4 \right) \\
+    \left( 0 : 1 : 0 : 0 \right) &\mapsto 2X_0 + X_1 - X_3 = 0 \leftrightarrow \left( 1 : 4 : 0 : 3 \right)\\
+    X_1 = X_3 = 0 &\mapsto 2X_1 - X_2 + 2X_3 = X_0 + 4X_1 + 2X_3 = 0 
+\end{cases} 
+\]
+La recta $r := 2X_1 - X_2 + 2X_3 = X_0 + 4X_1 + 2X_3 = 0$ es la intersección de dos hiperplanos:
+\[
+\begin{cases}
+    H_1 : 2X_1 - X_2 + 2X_3 = 0\\
+    H_2 : X_0 + 4X_1 + 2X_3 = 0
+\end{cases} 
+\]
+Por lo tanto, el espacio dual de $r$ será:
+\begin{align*}
+    r^* &= \left( H_1 \cap H_2 \right)^* = H_1^* + H_2^*\\
+       &= \langle \left( 0 : 2 : -1 : 2 \right), \left( 1 : 4 : 0 : 2 \right) \rangle\\
+       &= \{\left( t_1 : 2t_0 + 4t_1 : -t_0 : 2t_0 + 2t_1 \right) \mid \left( t_0 : t_1 \right) \in \mathbb{P}^{1}_{k}\} 
+.\end{align*}
+
+Con esto y los datos del enunciado tenemos para la correlación $f: \mathbb{P}^{3}_{k} \rightarrow \mathbb{P}^{3^*}_{k}$:
+\begin{align*}
+    f\left( 0 : 0 : 0 : 1 \right) &= \left( 0 : 1 : 2 : -4 \right),\quad f\left( 0 : 1 : 0 : 0 \right) = \left( 2 : 1 : 0 : -1 \right)\\
+    f\left( 1 : 0 : 0 : 0 \right) &= \left( t_1 : 2t_0 + 4t_1 : -t_0 : 2t_0 + 2t_1 \right)\\
+    f\left( 0 : 0 : 1 : 0 \right) &= \left( s_1 : 2s_0 + 4s_1 : -s_0 : 2s_0 + 2s_1 \right) 
+.\end{align*}
+
+Con esto tenemos que la matriz de $f$ respecto de la referencia canónica es (recordemos que el proyectivo los puntos son representantes de su clase):
+\[
+    A = \begin{pmatrix} t_1 & 2a & s_1 & 0\\ 
+    2t_0 + 4t_1 & a & 2s_0 + 4s_1 & b\\
+    -t_0 & 0 & -s_0 & 2b\\
+    2t_0 + 2t_1 & -a & 2s_0 + 2s_1 & -4b\end{pmatrix} 
+\]
+Como sabemos que $f$ es simétrica $\left( A = A^T \right)$ tenemos que:
+\[
+    A = \begin{pmatrix} t_1 & 2a & s_1 & 0\\ 
+    2t_0 + 4t_1 & a & 2s_0 + 4s_1 & b\\
+    -t_0 & 0 & -s_0 & 2b\\
+    2t_0 + 2t_1 & -a & 2s_0 + 2s_1 & -4b\end{pmatrix} 
+    = 
+    \begin{pmatrix} t_1 & 2t_0 + 4t_1 & -t_0 & 2t_0 + 2t_1\\ 
+    2a & a & 0 & -a\\
+    s_1 & 2s_0 + 4s_1 & -s_0 & 2s_0 + 2s_1\\
+    0 & b & 2b & -4b\end{pmatrix} 
+\]
+Fijándonos en los $0$'s observamos que $t_1 = -t_0$ y $s_0 = -2s_1$. Por tanto,
+\[
+    A = \begin{pmatrix} -t_0 & 2a & s_1 & 0\\ 
+    -2t_0 & a & 0 & b\\
+    -t_0 & 0 & s_1 & 2b\\
+    0 & -a & -2s_1 & -4b\end{pmatrix} 
+    = 
+    \begin{pmatrix} -t_0 & -2t_0 & -t_0 & 0\\ 
+    2a & a & 0 & -a\\
+    s_1 & 0 & s_1 & -2s_1\\
+    0 & b & 2b & -4b\end{pmatrix} 
+\]
+es decir, $a = -t_0, s_1 = -t_0, b = -a = t_0$ y:
+\[
+    A = \begin{pmatrix} -t_0 & -2t_0 & -t_0 & 0\\ 
+    -2t_0 & -t_0 & 0 & t_0\\
+    -t_0 & 0 & -2t_0 & 2t_0\\
+    0 & t_0 & 2t_0 & -4t_0\end{pmatrix} 
+    =^{t_0 \neq 0}  
+    \begin{pmatrix} -1 & -2 & -1 & 0\\ 
+    -2 & -1 & 0 & 1\\
+    -1 & 0 & -2 & 2\\
+    0 & 1 & 2 & -4\end{pmatrix} 
+\]
+En definitiva:
+\begin{align*}
+\begin{pmatrix} U_0'\\ U_1'\\ U_2'\\ U_3' \end{pmatrix} = A \begin{pmatrix} X_0\\ X_1\\ X_2\\ X_3 \end{pmatrix} \Rightarrow
+\begin{cases}
+    U_0' = -X_0 - 2X_1 - X_2\\
+    U_1' = -2X_0 - X_1 + X_3\\
+    U_2' = -X_0 - 2X_2 + 2X_3\\
+    U_3' = X_1 + 2X_2 - 4X_3
+\end{cases} 
+.\end{align*}
+
+\section{Ejercicio 9}%
+\label{sec:ejercicio_9_4}
+Tenemos: 
+\begin{align*}
+    Q_1 &: X_0^2 + 2X_0X_1 + 2X_0X_2 + X_1X_2 + X_2^2 = 0\\
+    Q_2 &: X_0^2 + 2X_0X_1 + 3X_0X_2 + 2X_1X_2 + 2X_2^2 = 0
+.\end{align*}
+Vemos que la segunda es degenerada:
+\[
+    A_2 = \begin{pmatrix} 1 & 1 & 3/2\\ 1 & 0 & 1\\ 3/2 & 1 & 2 \end{pmatrix} = \begin{pmatrix} 2 & 2 & 3\\ 2 & 0 & 2\\ 3 & 2 & 4 \end{pmatrix}, \mid A_2\mid = 0
+\]
+Utilizando la proposición 4.2.3 (esto es posible que este mal):
+\[
+A_2\begin{pmatrix} x_0\\ x_1\\ x_2 \end{pmatrix} = 0 \Rightarrow \begin{cases}
+    2x_0 + 2x_1 + 3x_2 = 0\\
+    2x_0 + 2x_2 = 0\\
+    3x_0 + 2x_1 + 4x_2 = 0
+\end{cases} \Leftrightarrow \begin{cases}
+    x_0 + 2x_1 + 2x_2 = 0\\
+    x_0 + x_2 = 0
+\end{cases} 
+\]
+Tenemos: 
+\[
+\begin{cases}
+    Q_1\\
+    x_0 + X_2 = 0
+\end{cases} \Leftrightarrow
+\begin{cases}
+    x_1x_2 = 0\\
+    x_0 + x_2 = 0
+\end{cases} 
+\]
+y 
+\[
+\begin{cases}
+    Q_1\\
+    x_0 + 2x_1 + 2x_2 = 0
+\end{cases} \Leftrightarrow
+\begin{cases}
+    x_2\left( x_2 + x_1 \right) = 0\\
+    x_0 + 2x_1 + 2x_2 = 0
+\end{cases} 
+\]
+``Uniéndolas'': 
+\[
+    x_0 = x_1 = x_2 = 0 
+\]
+
+\section{Ejercicio 11}%
+\label{sec:ejercicio_11_4}
+Las rectas tangentes en el primal serán los puntos de intersección de los duales.
+
+Tenemos:
+\[
+    C_1 = \begin{pmatrix} 1 & -1 & 1\\ -1 & 1 & 0\\ 1 & 0 & 0 \end{pmatrix} \Rightarrow C_1^* = \begin{pmatrix} 0 & 0 & 1\\ 0 & 1 & 1\\ 1 & 1 & 0 \end{pmatrix} 
+\]
+Similarmente:
+\[
+    C_2 = \begin{pmatrix} 0 & 0 & 1/2\\ 0 & -1 & 0\\ 1/2 & 0 & 0 \end{pmatrix} \Rightarrow C_2^* = \begin{pmatrix} 0 & 0 & 2\\ 0 & -1 & 0\\ 2 & 1 & 0 \end{pmatrix} 
+\]
+Cuyas ecuaciones serán:
+\begin{align*}
+    C_1 &:=\ldots\\
+    C_2 &:=\ldots
+.\end{align*}
+Lo hacemos parametrizando $C_2^*$ y sustituyendo:
+\begin{enumerate}
+    \item Tomo $p \in C_2^*, p = \left( 1 : 0 : 0 \right)$.
+    \item $r : X_0 = 0 \Rightarrow r = \{\left( 0 : t_0 : t_1 \right) : \left( t_0 : t_1 \right) \in \mathbb{P}^{1}_{k}\}$.
+    \item Para cada $q = \left( 0 : t_0 : t_1 \right) \in r$ definimos $l_q = \langle \left( 1 : 0 : 0 \right), q \rangle = \{\left( s_0 : s_1t_0 : s_1t_1 \right) : \left( s_0 : s_1 \right) \in \mathbb{P}^{2}_{k}\}$.
+    \item Calculamos $l_q \cap C_2^*$: 
+    \[
+    - \left( s_1t_0 \right)^2 + 4s_1t_1s_0 = 0 \Rightarrow s_1\left( -s_1t_0^2 + 4s_0t_1 \right) = 0
+    \]
+    \begin{itemize}
+        \item Si $s_1 = 0 \Rightarrow p = \left( 1 : 0 : 0 \right)$.
+        \item Si $-s_1t_0^2 + 4s_0t_1 = 0 \Rightarrow \left( s_0 : s_1 \right) = \left( t_0^2 : 4t_1 \right) \Rightarrow \left( t_0^2 : 4t_1t_0 : 4t_1^2 \right)$ que es la parametrización.
+    \end{itemize}
+\end{enumerate}
+Ahora solo queda sustituir la parametrización en la otra ecuación y queda:
+\[
+8t_1^2t_0\left( 3t_0 + 4t_1 \right) = 0
+\]
+Cada posibilidad nos da un punto de intersección. Finalmente:
+\[
+C_1^* \cap C_2^* = \{\left( 1 : 0 : 0 \right), \left( 0 : 0 : 1 \right), \left( 4 : -12 : 9 \right)\} 
+\]
+Que pasamos al dual y nos da la solución.
+
+\section{Ejercicio 12}%
+\label{sec:ejercicio_12_4}
+\begin{align*}
+    3t_0^2 = -2X_0 - X_1 + 2X_2\\
+    3t_0t_1 = X_0 - X_1 + 2X_2 \rightarrow \left(  \right)^2 = (1) \cdot (2)\\
+    3t_1^2 = -X_0 + X_1 + X_2
+.\end{align*}
+
+
+\section{Ejercicio 13}%
+\label{sec:ejercicio_13_4}
+Tenemos:
+\begin{align*}
+    \mathbb{P}^{1}_{k} \rightarrow \{X_0X_2 - X_1^2 = 0\} \ni \left( t_0^2 : t_0t_1 : t_1^2 \right)\\
+    \left( 1 : 0 \right) \mapsto \left( 1 : 1 : 1 \right)\\
+    \left( 0 : 1 \right) \mapsto \left( 1 : -1 : 1 \right)\\
+    \left( 1 : 1 \right) \mapsto \left( 1 : 0 : 0 \right) 
+.\end{align*}
+Por tanto,
+\[
+    \begin{pmatrix} t_0\\ t_1 \end{pmatrix} \mapsto \begin{pmatrix} 1 & 1\\ 1 & -1 \end{pmatrix} \begin{pmatrix} t_0\\ t_1 \end{pmatrix} 
+\]
+
+\section{Ejercicio 14}%
+\label{sec:ejercicio_14_4}
+\[
+\begin{cases}
+    X_0 = t_0^2 - t_0t_1\\
+    X_1 = t_0t_1 - t_1^2\\
+    X_2 = t_0t_1
+\end{cases} 
+\]
+y 
+\[
+\begin{cases}
+    t_0t_1 = X_2\\
+    t_0^2 = X_0 + X_2\qquad X_2^2 = \left( X_0 + X_2 \right) \left( X_2 - X_1 \right)\\
+    t_1^2 = X_2 - X_1
+\end{cases} 
+\]
+
+\section{Ejercicio 17}%
+\label{sec:ejercicio_17_4}
+Cónica $Q$ tal que sean tangentes:
+\begin{align*}
+    x_2 &= 0\\
+    x_0 - x_1 + x_2 &= 0\\
+    x_0 + x_2 &= 0\\
+    x_0 + x_1 + 2x_2 &= 0\\
+    x_0 + 2x_1 - x_2 &= 0
+.\end{align*}
+que sea tangente quiere decir que los puntos duales de los hiperplanos pertenezcan al dual de la cónica:
+\[
+Q^* \in \underbrace{\left( 0 : 0 : 1 \right), \left( 1 : -1 : 1 \right), \left( 1 : 0 : 1 \right), \left( 1 : 1 : 2 \right), \left( 1 : 2 : -1 \right)}_{\mathbb{P}^{*}\left( V \right)}.
+\]\[
+a_0X_0^2 + a_1X_1X_0 + a_2X_0X_2 + a_3X_1^2 + a_4X_1X_2 + a_5X_2^2 = 0
+\]
+Sustituimos los valores:
+\begin{align*}
+    \left( 0 : 0 : 1 \right) \in Q^* &\Rightarrow a_5 = 0\\
+   \left( 1 : -1 : 1 \right) \in Q^* &\Rightarrow a_0 - a_1 + a_2 + a_3 - a_4 + a_5 = 0\\
+   \left( 1 : 0 : 1 \right) \in Q^* &\Rightarrow a_0 + a_2 + a_5 = 0\\
+   \left( 1 : 1 : 2 \right) \in Q^* &\Rightarrow a_0 + a_1 + 2a_2 + a_3 + 2a_4 + 4a_5 =  0\\
+   \left( 1 : 2 : -1 \right) \in Q^* &\Rightarrow a_0 + 2a_1 - a_2 + 4a_3 - 2 a_4 + a_3 = 0
+.\end{align*}
+Se soluciona:
+\[
+Q^* : -7x_0^2 + 4X_0X_1 + 7X_0X_2d - X_1^2 - 5X_1X_2 = 0
+\]
+Si $A$ es la matriz asociada a $Q \Rightarrow A^{-1}$ es la asociada a $Q^*$:
+\[
+    A^{-1} = \begin{pmatrix} -7 & 2 & 7/2\\ 2 & -1 & -3/2\\ 7/2 & -5/2 & 0 \end{pmatrix} \Rightarrow A = \begin{pmatrix} 25 & 35 & 6\\ 35 & 49 & 42\\ 6 & 42 & -12 \end{pmatrix} 
+\]
+Por lo que se tiene $Q$:
+\[
+Q : \ldots
+\]
+
+\section{Ejercicio 18}%
+\label{sec:ejercicio_18_4}
+Tenemos: 
+\[
+    \overline{C} : \begin{pmatrix} 1 & -1 & 1\\ -1 & t & 1\\ 1 & 1 & t \end{pmatrix} 
+\]
+A su vez:
+\[
+    \overline{C} \cap \{X_0 = 0\} : \begin{pmatrix} t & 1\\ 1 & t \end{pmatrix},\ \det = t^2 - 1
+\]
+Que nos da los siguientes casos:
+\begin{itemize}
+    \item $\lvert t \rvert < 1, \det < 0,\ 2 $ puntos reales distintos.
+    \item $\left| t \right| > 1,\ 2$ puntos iguales: 
+    \begin{itemize}
+        \item $t > 1 \Rightarrow \begin{pmatrix} 1 & \\ & 1 \end{pmatrix}$.
+        \item $t < -1 \Rightarrow \begin{pmatrix} -1 & \\ & -1 \end{pmatrix}$.
+    \end{itemize}
+    \item $\left| t \right| = \pm 1$, punto doble.
+\end{itemize}
+
+\section{Ejercicio 19}%
+\label{sec:ejercicio_19_4}
+\begin{itemize}
+\item[b)] Tenemos la matriz:
+\[
+    \begin{pmatrix} 0 & 0 & -2\\ 0 & 1 & 1\\ -2 & \boxed{1}  & \boxed{-3}  \end{pmatrix} 
+\]
+Hipérbola
+
+Tenemos:
+\[
+    \begin{pmatrix} 0\\ 1\\ 1 \end{pmatrix} \mapsto -2 + 2X - 2Y = 0 \Leftrightarrow X - Y = 1
+\]
+Y
+\[
+    \begin{pmatrix} 0\\ 3\\ -1 \end{pmatrix} \mapsto 2 + 2X + 4Y = 0 \Leftrightarrow X + 3Y = -1 \text{ asíntota.} 
+\]
+Centro es la intersección de las asíntotas.
+\end{itemize}
+
+
 \end{document}
